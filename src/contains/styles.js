@@ -4,13 +4,16 @@ const generalStyle = StyleSheet.create({
   mt10: {
     marginTop: 10,
   },
+  mb2: {
+    marginBottom: 20,
+  },
   flex1: {
     flex: 1,
   },
   wrapper: {
     flex: 1,
     paddingHorizontal: 10,
-    paddingVertical: 20,
+    paddingVertical: 30,
     backgroundColor: '#fff',
   },
   containCenter: {
@@ -34,6 +37,13 @@ const generalStyle = StyleSheet.create({
   label: {
     fontSize: 20,
     marginBottom: 10
+  },
+  opt: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgb(243,243,243)'
   }
 });
 

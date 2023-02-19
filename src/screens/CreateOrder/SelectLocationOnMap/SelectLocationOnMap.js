@@ -28,11 +28,12 @@ const SelectLocationOnMap = () => {
   const mapRef = useRef()
   const [locationSelected,setLocationSelected] = useState('')
 
+
   const handleGetPossion = async () => {
     let camera = await mapRef.current.getCamera()
     console.log(camera.center);
       Geocoder.init(
-        'AIzaSyBFU98eZS2x-aGes9wDLbV6qgEENDbIKAE',
+        'AIzaSyCWqPAK7sIGXGfSU-AlMG-vVysK4urXHvs',
         {
           language: 'vn'
         }
@@ -40,10 +41,16 @@ const SelectLocationOnMap = () => {
       Geocoder.from(camera.center)
         .then(json => {
           let addressComponent = json.results[0].formatted_address;
-          setLocationSelected(addressComponent)
+          setLocationSelected({
+            address: addressComponent,
+            coordinates: camera.center
+          })
       })
     }
 
+    const handleChooseLocation = () => {
+      navigation.navigate('NewOrder',{currentLocation: locationSelected})
+    }
     
   return (
     <View style={{flex: 1}}>
@@ -65,9 +72,9 @@ const SelectLocationOnMap = () => {
       <View style={stylesSelectOnMap.wrapSelectLocation}>
         <View style={stylesSelectOnMap.location}>
           <Text>Vị trí bạn chọn:</Text>
-          <Text>{locationSelected}</Text>
+          <Text>{locationSelected?.address}</Text>
         </View>
-        <Button title="Chọn" customStyle={stylesSelectOnMap.btnSelect} onPress={() => navigation.navigate('NewOrder')}/>
+        <Button title="Chọn" customStyle={stylesSelectOnMap.btnSelect} onPress={handleChooseLocation}/>
       </View>
     </View>
   );

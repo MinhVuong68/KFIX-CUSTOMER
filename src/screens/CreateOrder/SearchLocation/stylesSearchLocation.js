@@ -4,7 +4,8 @@ import { colors } from '../../../contains';
 const stylesSearchLocation = StyleSheet.create({
   header: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 10
   },
   icon: {
     paddingHorizontal: 4,

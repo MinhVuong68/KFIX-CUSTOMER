@@ -9,7 +9,7 @@ const HeaderScreen = ({goBack, name}) => {
     const navigation = useNavigation()
   return (
     <View style={stylesHeaderScreen.constain}>
-      <TouchableOpacity style={generalStyle.flex1} onPress={()=>navigation.navigate('Home')}>
+      <TouchableOpacity style={generalStyle.flex1} onPress={()=>navigation.goBack()}>
         <Ionicons name="arrow-back" color="#000" size={35} />
       </TouchableOpacity>
       <View >

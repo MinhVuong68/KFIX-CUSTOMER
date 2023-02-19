@@ -1,5 +1,6 @@
 const colors = {
-    primaryColor: 'rgb(234,68,28)',
+    primaryColor: 'green',
+    disabled: '#ccc',
     textColor: '#000',
     borderColor: '#e8e8e8',
     iconColor: '#757575',

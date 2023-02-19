@@ -21,7 +21,6 @@ const Register = () => {
   return (
     <ScrollView style={generalStyle.wrapper}>
       <FormGroup>
-        <InputField label="Họ:" error="Họ không hợp lệ!" />
         <InputField label="Tên:" error="Tên không hợp lệ!" />
         <InputField
           label="Số điện thoại:"

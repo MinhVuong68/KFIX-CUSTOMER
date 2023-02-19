@@ -3,7 +3,8 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import { colors } from '../contains'
 
 import { Home, Order } from '../screens'
-import Me from '../screens/Me/Me'
+import Bill from '../screens/Bill/Bill'
+import Profile from '../screens/Me/Profile/Profile'
 
 const Tab = createBottomTabNavigator()
 const BottomTab = () => {
@@ -17,9 +18,11 @@ const BottomTab = () => {
             let screenName = route.name
             let iconName = "home"
             if(screenName == "Order") {
-                iconName = "reorder"
-            } else if (screenName ==='Me'){
+                iconName = "clock-o"
+            } else if (screenName ==='Profile'){
                 iconName = "user"
+            } else if (screenName === 'Bill') {
+                iconName = "money"
             }
             return <FontAwesome
                 name={iconName}
@@ -32,7 +35,9 @@ const BottomTab = () => {
         <Tab.Navigator screenOptions={screenOptions}>
             <Tab.Screen name={"Home"} component={Home} />
             <Tab.Screen name={"Order"} component={Order} />
-            <Tab.Screen name={"Me"} component={Me} />
+            <Tab.Screen name={"Bill"} component={Bill} />
+
+            <Tab.Screen name={"Profile"} component={Profile} />
         </Tab.Navigator>
     )
 }

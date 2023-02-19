@@ -10,7 +10,7 @@ const Button = ({noBackground,title,customStyle,...passProps}) => {
   }
   const styles = StyleSheet.create({
     btn: !noBackground && {
-      backgroundColor: noBackground ? '' : colors.primaryColor,
+      backgroundColor: noBackground ? '' : (props.disabled ? colors.disabled :colors.primaryColor),
       paddingHorizontal: 8,
       paddingVertical: 16,
       width: '100%',
@@ -26,7 +26,8 @@ const Button = ({noBackground,title,customStyle,...passProps}) => {
   });
   return (
     <TouchableOpacity style={{...styles.btn,...customStyle}} {...props}>
-      <Text style={{...styles.textButton,...styleText}}>{title}</Text>
+      {title && <Text style={{...styles.textButton,...styleText}}>{title}</Text>}
+      {passProps.icon}
     </TouchableOpacity>
   );
 };
