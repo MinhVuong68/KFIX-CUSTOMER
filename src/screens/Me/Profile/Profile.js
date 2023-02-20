@@ -6,7 +6,6 @@ import Foundation from "react-native-vector-icons/Foundation";
 import Entypo from "react-native-vector-icons/Entypo";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import generalStyle from "../../../contains/styles";
-import EditProfile from "../EditProfile/EditProfile";
 import styleProfile from "./stylesProfile";
 const { width } = Dimensions.get("window");
 
