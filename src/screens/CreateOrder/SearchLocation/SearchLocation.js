@@ -44,6 +44,7 @@ const SearchLocation = ({ route }) => {
     },
   });
 
+  //
   const getLocationUserNow = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
@@ -51,7 +52,7 @@ const SearchLocation = ({ route }) => {
       return null;
     }
     let location = await Location.getCurrentPositionAsync({});
-    Geocoder.init("AIzaSyCWqPAK7sIGXGfSU-AlMG-vVysK4urXHvs", {
+    Geocoder.init("AIzaSyDymGZaNKMgK9-_NNceShNhRE2xtfqecW4", {
       language: "vn",
     });
     Geocoder.from({
@@ -81,7 +82,7 @@ const SearchLocation = ({ route }) => {
     //   latitude: details?.geometry.location.lat || 0,
     //   longitude: details?.geometry.location.lng || 0,
     // };
-    Geocoder.init("AIzaSyCWqPAK7sIGXGfSU-AlMG-vVysK4urXHvs", {
+    Geocoder.init("AIzaSyDymGZaNKMgK9-_NNceShNhRE2xtfqecW4", {
       language: "vn",
     });
     Geocoder.from({
@@ -165,7 +166,7 @@ const SearchLocation = ({ route }) => {
             handleSelected(details, data);
           }}
           query={{
-            key: "AIzaSyCWqPAK7sIGXGfSU-AlMG-vVysK4urXHvs",
+            key: "AIzaSyDymGZaNKMgK9-_NNceShNhRE2xtfqecW4",
             language: "vn",
             components: "country:vn",
           }}
