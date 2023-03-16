@@ -4,13 +4,19 @@ import {generalStyle} from '../../contains';
 import stylesHome from './stylesHome';
 import {problems} from '../../assets/datas';
 import {IntroduceHome, Option} from '../../components';
+import { useSelector } from 'react-redux';
 
 const windowWidth = Dimensions.get('window').width;
 
+
 const Home = () => {
+  const {user} = useSelector(state => state.auth)
+  const name  =  user && user.username;
+
+
   return (
     <View style={[generalStyle.wrapper]}>
-      <Text style={stylesHome.hello}>Chào Nguyễn Minh Vương!</Text>
+      <Text style={stylesHome.hello}>Chào {name}!</Text>
       <IntroduceHome 
         height={200}    
       />
