@@ -33,7 +33,7 @@ const SelectLocationOnMap = () => {
     let camera = await mapRef.current.getCamera()
     console.log(camera.center);
       Geocoder.init(
-        'AIzaSyDymGZaNKMgK9-_NNceShNhRE2xtfqecW4',
+        'AIzaSyDaOulQACiJzBfqumbsqg_-vKha8fCnL-s',
         {
           language: 'vn'
         }
